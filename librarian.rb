@@ -1,7 +1,9 @@
 require_relative "book"
 require_relative "member"
 
-accounts = {}
+# place somewhehere btter
+book_case = {}
+member_list = {}
 puts "Libary Management System 
 1. Add Book 
 2. Add Member 
@@ -22,35 +24,36 @@ user_input_number = gets.to_i
       puts "Enter book author:"
       author = gets
       title = Book.new(title, author)
-      accounts.store(title.title, title.author)
+      book_case.store(title.title, title.author)
       puts "Book added successfully!"
       p title
     when 2
-      puts "Enter your account number:"
-      user_input_account_number = gets.to_i
-      puts "Enter the amount to deposit" 
-      deposit = gets.to_i
-      if accounts.include?(user_input_account_number)
-        accounts[user_input_account_number] += deposit
-      end
-       puts
+      puts "Enter member name:"
+      member_name = gets
+      member_name = Member.new(member_name)
+      member_list.store(member_name.member_name)
+      puts "Member added successfully!" 
     when 3
-      puts "Enter your account number:"
-      user_input_account_number = gets.to_i
-      puts "Enter the amount to withdraw" 
-      deposit = gets.to_i
-      if accounts.include?(user_input_account_number)
-        accounts[user_input_account_number] -= deposit
-        puts "#{deposit} has been withdrawn into your account"
-        puts
+      puts "Books in the library:"
+      book_case.each do |book|
+        puts "#{book.title} by #{book.author}"
       end
     when 4 
-      puts "Enter your account number:"
-      user_input_account_number = gets.to_i
-      if accounts.include?(user_input_account_number)
-        puts "Your current balance is #{accounts[user_input_account_number]}"
-        puts
+      puts "Library members: "
+
+      book_case.each do |book|
+        puts "#{book[0]} by #{book[1]}"
       end
+    when 5 
+      puts "Enter memebr ID:"
+
+      puts "Enter book title:"
+    when 6
+      puts "Enter memebr ID:"
+
+      puts "Enter book title:"
+
+      puts " Book returned successfully!"
     else
         puts  "Error, Please enter Number between 1 and 5"
         puts
@@ -66,4 +69,4 @@ user_input_number = gets.to_i
     user_input_number = gets.to_i
     end
     
-puts "Thank you for using the Simple Banking System. Goodbye!"
+puts "Goodbye!"
