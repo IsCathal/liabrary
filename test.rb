@@ -22,6 +22,8 @@ p title
 book_shelf.add_to_book_shelf(title)
 
 book_shelf.add_to_book_shelf(title2)
+book_shelf.add_to_book_shelf(title2)
+
 
 puts " My Book Shelf"
 p book_shelf.shelf

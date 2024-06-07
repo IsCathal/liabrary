@@ -4,7 +4,7 @@ require_relative "book_shelf"
 
 
 # place somewhehere btter
-book_shelf = BookShelf.new(title, author)
+book_shelf = BookShelf.new
 member_list = {}
 puts "Libary Management System 
 1. Add Book 
@@ -25,10 +25,9 @@ user_input_number = gets.to_i
       title = gets.chomp
       puts "Enter book author:"
       author = gets.chomp
-      Book.new(title, author)
-      book_case << (Book.new(title, author))
+      book_shelf.add_to_book_shelf(Book.new(title, author))
       puts "Book added successfully!"
-      p book_case
+      p book_shelf.shelf
     when 2
       puts "Enter member name:"
       member_name = gets
@@ -37,7 +36,7 @@ user_input_number = gets.to_i
       puts "Member added successfully!" 
     when 3
       puts "Books in the library:"
-
+      book_shelf.display_shelf
     when 4 
       puts "Library members: "
 
