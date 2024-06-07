@@ -1,11 +1,11 @@
 require_relative "book"
 require_relative "member"
 require_relative "book_shelf"
-
+require_relative "member_storage"
 
 # place somewhehere btter
 book_shelf = BookShelf.new
-member_list = {}
+member_list = MemberStorage.new
 puts "Libary Management System 
 1. Add Book 
 2. Add Member 
@@ -31,18 +31,12 @@ user_input_number = gets.to_i
     when 2
       puts "Enter member name:"
       member_name = gets
-      member_name = Member.new(member_name)
-      member_list.store(member_name.member_name)
+      member_list.add_member(Member.new(member_name))
       puts "Member added successfully!" 
     when 3
-      puts "Books in the library:"
       book_shelf.display_shelf
     when 4 
-      puts "Library members: "
-
-      book_case.each do |book|
-        puts "#{book[0]} by #{book[1]}"
-      end
+      member_list.display_members
     when 5 
       puts "Enter memebr ID:"
 
