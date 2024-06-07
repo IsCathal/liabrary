@@ -13,9 +13,8 @@ class BookShelf
 
 	def checked_out(book)
 		# this will kick out all books with same object reference
-		puts "in checkedout"
-		index = @shelf.index(book)
-		@shelf.delete_at(index) if index
+		puts "in checkout"
+		book.checked_out
 	end
 
 	def check_if_book_available(book)
