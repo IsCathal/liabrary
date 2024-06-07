@@ -8,7 +8,7 @@ puts "Libary Management System
 1. Add Book 
 2. Add Member 
 3. List Books 
-4. List Meme=bers 
+4. List Memebers 
 5. Check Out Book
 6. Return Book
 7. Exit
@@ -20,9 +20,9 @@ user_input_number = gets.to_i
     case user_input_number
     when 1
       puts "Enter Book:"
-      title = gets
+      title = gets.chomp
       puts "Enter book author:"
-      author = gets
+      author = gets.chomp
       title = Book.new(title, author)
       book_case.store(title.title, title.author)
       puts "Book added successfully!"
@@ -35,9 +35,7 @@ user_input_number = gets.to_i
       puts "Member added successfully!" 
     when 3
       puts "Books in the library:"
-      book_case.each do |book|
-        puts "#{book.title} by #{book.author}"
-      end
+      book_case.each { |title. author | puts "#{title} by #{author} }}
     when 4 
       puts "Library members: "
 
@@ -62,7 +60,7 @@ user_input_number = gets.to_i
     1. Add Book 
     2. Add Member 
     3. List Books 
-    4. List Meme=bers 
+    4. List Memebers 
     5. Check Out Book
     6. Return Book
     7. Exit"
