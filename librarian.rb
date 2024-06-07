@@ -1,8 +1,10 @@
 require_relative "book"
 require_relative "member"
+require_relative "book_shelf"
+
 
 # place somewhehere btter
-book_case = []
+book_shelf = BookShelf.new(title, author)
 member_list = {}
 puts "Libary Management System 
 1. Add Book 
@@ -35,6 +37,7 @@ user_input_number = gets.to_i
       puts "Member added successfully!" 
     when 3
       puts "Books in the library:"
+
     when 4 
       puts "Library members: "
 
