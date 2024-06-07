@@ -2,7 +2,7 @@ require_relative "book"
 require_relative "member"
 
 # place somewhehere btter
-book_case = {}
+book_case = []
 member_list = {}
 puts "Libary Management System 
 1. Add Book 
@@ -23,10 +23,10 @@ user_input_number = gets.to_i
       title = gets.chomp
       puts "Enter book author:"
       author = gets.chomp
-      title = Book.new(title, author)
-      book_case.store(title.title, title.author)
+      Book.new(title, author)
+      book_case << (Book.new(title, author))
       puts "Book added successfully!"
-      p title
+      p book_case
     when 2
       puts "Enter member name:"
       member_name = gets
@@ -35,7 +35,6 @@ user_input_number = gets.to_i
       puts "Member added successfully!" 
     when 3
       puts "Books in the library:"
-      book_case.each { |title. author | puts "#{title} by #{author} }}
     when 4 
       puts "Library members: "
 
