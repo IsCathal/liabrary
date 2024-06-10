@@ -18,5 +18,4 @@ class MemberStorage
 		end
 	end
 
-
 end
