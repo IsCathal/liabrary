@@ -1,6 +1,6 @@
 require_relative "book"
-
-class BookShelf
+#might need
+class BookShelf < Book
 	attr_reader :shelf
 
 	def initialize
