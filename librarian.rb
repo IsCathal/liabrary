@@ -47,15 +47,15 @@ user_input_number = gets.to_i
       puts "Enter book title:"
       title = gets.chomp
       library.checkout_book(id, title, book_shelf, member_list)
-
     when 6
       puts "Enter memebr ID:"
-
+      id = gets.to_i
       puts "Enter book title:"
-
+      title = gets.chomp
       puts " Book returned successfully!"
+      library.checkin_book(id, title, book_shelf, member_list)
     else
-        puts  "Error, Please enter Number between 1 and 5"
+        puts  "Error, Please enter Number between 1 and 7"
         puts
     end
     puts "Libary Management System 

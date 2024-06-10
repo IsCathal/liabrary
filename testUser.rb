@@ -11,7 +11,7 @@ dubliners = Book.new("Dubliners", "James Joyce")
 
 charlie = Member.new("charlie")
 
-charlie.set_user_book_list(dubliners.title)
+charlie.add_to_book_list(dubliners.title)
 
 
 

@@ -11,8 +11,12 @@ class Member
     @book_list = []
   end
 
-  def set_user_book_list(book)
+  def add_to_book_list(book)
     @book_list << book.title
+  end
+
+  def return_book(book)
+    @book_list.delete(book.title)
   end
 
   private

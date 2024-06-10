@@ -11,40 +11,58 @@ class Libary
 	current_member  = nil
 
 	member_list.memberStorage.each do |member|
-
 		if member.account_number == id
 			current_member = member
 		end
 	end
 
-	p current_member
-
-	#bit like java would throw an error without
 	if current_member.nil?
 		puts "No member with account number #{id} found."
-      return
-    end
+    return
+  end
 
 
 	book_shelf.shelf.each do |book|
 		if book.title == title && book.status == "Available"
 			puts "title is #{book.title} and its #{book.status}" 
-			current_member.set_user_book_list(book)
+			current_member.add_to_book_list(book)
 			book.checked_out
 			puts "title is #{book.title} and its #{book.status}" 
-
-
 		else
 			puts "Book is unavailable "
 		end
 	end
 
- 
-	p member_list
-	#Access memberstorage by id
-	#Access bookshelf by title
-	# tie together
-	#return info
+	end
+
+	def checkin_book(id, title, book_shelf, member_list)
+
+	current_member  = nil
+
+	member_list.memberStorage.each do |member|
+		if member.account_number == id
+			current_member = member
+		end
+	end
+
+	if current_member.nil?
+		puts "No member with account number #{id} found."
+    return
+  end
+
+	book_shelf.shelf.each do |book|
+		if book.title == title && book.status == "Checked Out"
+			puts "title is #{book.title} and its #{book.status}" 
+			current_member.return_book(book)
+			book.checked_in
+			puts "title is #{book.title} and its #{book.status}" 
+		else
+			puts "Book is unavailable "
+		end
+	end
+
+
+
 	end
 
 end
@@ -59,7 +77,7 @@ third_policeman = Book.new("The Third PoliceMan", "Flann O'Brien")
 charlie = Member.new("charlie")
 tom = Member.new("tom")
 
-charlie.set_user_book_list(dubliners)
+charlie.add_to_book_list(dubliners)
 p "book list is #{charlie.book_list} "
 member_list.add_member(charlie)
 member_list.add_member(tom)
