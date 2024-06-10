@@ -1,6 +1,5 @@
 require_relative "book"
-#might need
-class BookShelf < Book
+class BookShelf
 	attr_reader :shelf
 
 	def initialize
@@ -9,17 +8,6 @@ class BookShelf < Book
 
 	def add_to_book_shelf(book)
 		@shelf << book
-	end
-
-	def checked_out(book)
-		# this will kick out all books with same object reference
-		puts "in checkout"
-		book.checked_out
-	end
-
-	def check_if_book_available(book)
-		
-
 	end
 
 	def display_shelf

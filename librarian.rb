@@ -4,12 +4,10 @@ require_relative "book_shelf"
 require_relative "member_storage"
 require_relative "library"
 
-
-# place somewhehere btter
 book_shelf = BookShelf.new
 member_list = MemberStorage.new
 library = Libary.new
-#hash for now
+
 puts "Libary Management System 
 1. Add Book 
 2. Add Member 
@@ -31,7 +29,6 @@ user_input_number = gets.to_i
       author = gets.chomp
       book_shelf.add_to_book_shelf(Book.new(title, author))
       puts "Book added successfully!"
-      p book_shelf.shelf
     when 2
       puts "Enter member name:"
       member_name = gets.chomp

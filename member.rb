@@ -1,6 +1,5 @@
 require_relative "book"
 
-
 class Member 
   attr_reader :account_number, :name
   attr_accessor :book_list

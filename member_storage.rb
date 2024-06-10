@@ -1,6 +1,4 @@
 require_relative "member"
-
-# should refactor with inherentice and super keyword
 class MemberStorage
 	attr_reader :memberStorage
 
