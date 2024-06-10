@@ -13,10 +13,10 @@ class Libary
 			if book.title == title && book.status == "Available"
 			current_member.add_to_book_list(book)
 			book.checked_out
-		else
+			else
 			puts "Book is unavailable "
+			end
 		end
-	end
 
 	end
 
@@ -24,22 +24,18 @@ class Libary
 
 		current_member  = get_current_member(id, member_list)
 
-		member_list.memberStorage.each do |member|
-			if member.account_number == id
-			current_member = member
+			book_shelf.shelf.each do |book|
+				if book.title == title && book.status == "Checked Out"
+					current_member.return_book(book)
+					book.checked_in
+					puts " Book returned successfully!"
+				else
+					puts "Book is unavailable, or you havent got this book to return "
+					return
+				end
 			end
-		end
 
-	book_shelf.shelf.each do |book|
-		if book.title == title && book.status == "Checked Out"
-			current_member.return_book(book)
-			book.checked_in
-		else
-			puts "Book is unavailable "
 		end
-	end
-
-	end
 
 	def get_current_member(id, member_list)
 
@@ -51,13 +47,13 @@ class Libary
 			end
 		end
 
-	if current_member.nil?
-		puts "No member with account number #{id} found."
-    return
-  end
+		if current_member.nil?
+			puts "No member with account number #{id} found."
+		return
+		end
 
-	current_member
-	end
+		current_member
+		end
 
 end
 
