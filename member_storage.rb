@@ -9,5 +9,4 @@ class MemberStorage < BookShelf
 			puts "#{member.name} (ID: #{member.account_number})"
 		end
 	end
-
 end
