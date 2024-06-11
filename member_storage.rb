@@ -1,19 +1,13 @@
 require_relative "member"
-class MemberStorage
-	attr_reader :memberStorage
+require_relative "book_shelf"
 
-	def initialize
-		@memberStorage = []
-	end
 
-	def add_member(member)
-		@memberStorage << member
-	end
-
+# oop member_storage and book_shelf
+class MemberStorage < BookShelf
 
 	def display_members
 		puts "Library members:"
-		@memberStorage.each do |member| 
+		@shelf.each do |member| 
 			puts "#{member.name} (ID: #{member.account_number})"
 		end
 	end

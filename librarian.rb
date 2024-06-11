@@ -27,12 +27,12 @@ user_input_number = gets.to_i
       title = gets.chomp
       puts "Enter book author:"
       author = gets.chomp
-      book_shelf.add_to_book_shelf(Book.new(title, author))
+      book_shelf.add_to_storage(Book.new(title, author))
       puts "Book added successfully!"
     when 2
       puts "Enter member name:"
       member_name = gets.chomp
-      member_list.add_member(Member.new(member_name))
+      member_list.add_to_storage(Member.new(member_name))
       puts "Member added successfully!" 
     when 3
       book_shelf.display_shelf

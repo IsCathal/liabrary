@@ -41,7 +41,7 @@ class Libary
 
 		current_member  = nil
 
-		member_list.memberStorage.each do |member|
+		member_list.shelf.each do |member|
 			if member.account_number == id
 				current_member = member
 			end

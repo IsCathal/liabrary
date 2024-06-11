@@ -6,7 +6,7 @@ class BookShelf
 		@shelf = []
 	end
 
-	def add_to_book_shelf(book)
+	def add_to_storage(book)
 		@shelf << book
 	end
 
