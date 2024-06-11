@@ -1,8 +1,6 @@
 require_relative "member"
 require_relative "book_shelf"
 
-
-# oop member_storage and book_shelf
 class MemberStorage < BookShelf
 
 	def display_members
